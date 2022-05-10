@@ -36,19 +36,19 @@ class TPQueue {
          ITEM* item = create(cif);
          ITEM* temp = head;
          if (head && tail) {
-             while (temp && (cif.prior <= temp->data).prior) {
+             while (temp && (temp->data).prior >= cif.prior) {
                  t = temp;
                  temp = temp->next;
              }
              if (temp == head && ((head->data).prior == (item->data).prior)) {
                  item->next = head->next;
                  head->next = item;
-             } else if (temp == head && ((head->data).prior < (item->data).prior)) {
-                 item->next = head;
-                 head = item;
-             } else if (temp == head && ((head->data).prior >= (it->data).prior)) {
+             } else if (temp == head && ((head->data).prior >= (item->data).prior)) {
                  it->next = head->next;
                  head->next = it;
+             } else if ((item->data).prior) < temp == head && ((head->data).prior) {
+                 item->next = head;
+                 head = item;
              } else if (!temp) {
                  tail->next = item;
                  tail = item;
