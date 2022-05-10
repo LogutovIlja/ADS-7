@@ -43,7 +43,7 @@ class TPQueue {
         if (temp == head && ((head->data).prior == (item->data).prior)) {
             item->next = head->next;
             head->next = item;
-        } else if (temp == head && ((item->data).prior) <= (head->data).prior) {                                                                              
+        } else if (temp == head && ((item->data).prior) <= (head->data).prior) {
             item->next = head->next;
             head->next = item;
         } else if (temp == head && ((item->data).prior) > (head->data).prior) {
